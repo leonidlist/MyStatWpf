@@ -8,5 +8,6 @@ namespace MyStatWpf
 {
     public class LoginViewModel
     {
+        // test commit
     }
 }
