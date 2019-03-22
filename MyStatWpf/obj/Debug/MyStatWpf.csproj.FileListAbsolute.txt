@@ -23,3 +23,4 @@ F:\С#\WPF\MyStatWPF\MyStatWpf\MyStatWpf\obj\Debug\MyStatWpf.exe
 F:\С#\WPF\MyStatWPF\MyStatWpf\MyStatWpf\obj\Debug\MyStatWpf.pdb
 F:\С#\WPF\MyStatWPF\MyStatWpf\MyStatWpf\obj\Debug\GeneratedInternalTypeHelper.g.cs
 F:\С#\WPF\MyStatWPF\MyStatWpf\MyStatWpf\obj\Debug\App.baml
+F:\С#\WPF\MyStatWPF\MyStatWpf\MyStatWpf\obj\Debug\Styles\ControlStyles.baml
