@@ -4,10 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyStatWpf"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
-        Title="LoginView" Height="450" Width="800">
+        WindowStyle="None"
+        Name="LoginWindow"
+        Title="LoginView" Height="460" Width="815"
+        AllowsTransparency="True" Background="Transparent">
 
-    <Grid>
-        
-    </Grid>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CornerRadius="2" ResizeBorderThickness="0"></WindowChrome>
+    </WindowChrome.WindowChrome>
+
+    <Border Background="White" CornerRadius="2">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="#48BBFF" CornerRadius="2 0 0 2">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="MyStat Application"
+                               FontSize="23"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center">
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <StackPanel Grid.Column="1">
+                <Border HorizontalAlignment="Right"
+                        Margin="15"
+                        Cursor="Hand"
+                        Background="Transparent"
+                        WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Path Data="M0.6 14.19C0.41 14.37 0.41 14.67 0.6 14.86C0.69 14.95 0.81 15 0.93 15C1.06 15 1.18 14.95 1.27 14.86C1.72 14.41 3.97 12.17 8.01 8.12C12.05 12.17 14.3 14.41 14.75 14.86C14.84 14.95 14.96 15 15.08 15C15.2 15 15.33 14.95 15.42 14.86C15.61 14.67 15.61 14.37 15.42 14.19C14.97 13.74 12.74 11.51 8.73 7.5C12.75 3.49 14.98 1.26 15.42 0.81C15.61 0.63 15.61 0.32 15.42 0.14C15.24 -0.05 14.94 -0.05 14.75 0.14C14.3 0.59 12.05 2.84 8.01 6.88C3.96 2.84 1.71 0.59 1.27 0.14C1.08 -0.05 0.78 -0.05 0.59 0.14C0.41 0.32 0.41 0.63 0.59 0.81C1.04 1.26 3.27 3.49 7.29 7.5C3.27 11.51 1.04 13.74 0.6 14.19Z"
+                          Fill="Black">
+                    </Path> 
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <ei:CallMethodAction TargetObject="{Binding ElementName=LoginWindow}" MethodName="Close"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Border>
+                <StackPanel Margin="50 45 50 0">
+                    <TextBlock Text="Log In to MyStat"
+                               FontSize="20"
+                               Foreground="#414F5A"
+                               HorizontalAlignment="Center">
+                    </TextBlock>
+                    <Label Margin="0 35 0 0" Visibility="{Binding ElementName=UsernameField, Path=Text.}" Content="Username:"></Label>
+                    <TextBox Name="UsernameField" Style="{StaticResource TextBoxStyle}"></TextBox>
+                    <Label Margin="0 5 0 0" Content="Password:"></Label>
+                    <PasswordBox Style="{StaticResource TextBoxStyle}"></PasswordBox>
+                    <ComboBox Margin="0 15 0 0" Style="{StaticResource ComboBoxFlatStyle}"></ComboBox>
+                    <Button Margin="0 20 0 0" Content="Log In" Template="{StaticResource PrimaryBlueButton}" Height="40"></Button>
+                    <TextBlock Margin="0 20 0 0" HorizontalAlignment="Center" Foreground="#FFFF5050" Text="Incorrect username or password"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Window>

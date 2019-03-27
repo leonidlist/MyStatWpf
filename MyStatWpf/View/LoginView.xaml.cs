@@ -23,5 +23,10 @@ namespace MyStatWpf
         {
             InitializeComponent();
         }
+
+        private void Button_PreviewStylusSystemGesture(object sender, StylusSystemGestureEventArgs e)
+        {
+
+        }
     }
 }
