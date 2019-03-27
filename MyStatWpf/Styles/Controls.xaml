@@ -3,12 +3,13 @@
                     xmlns:local="clr-namespace:MyStatWpf">
 
     <Style x:Key="TextBoxStyle">
+        <Setter Property="Control.BorderBrush" Value="#cacaca"></Setter>
         <Setter Property="Control.BorderThickness" Value="2"/>
         <Setter Property="Control.FontSize" Value="15"/>
         <Setter Property="Control.Foreground" Value="Black"/>
         <Setter Property="Control.Padding" Value="5"/>
         <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-        <Setter Property="Control.Background" Value="White"/>
+        <Setter Property="Control.Background" Value="#ffffff"/>
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -314,7 +315,7 @@
     <ControlTemplate TargetType="ToggleButton" x:Key="ComboBoxToggleButtonTemplate">
         <Grid>
             <Border CornerRadius="2" Name="Border"
-              BorderBrush="#48bbff" 
+              BorderBrush="#cacaca" 
               BorderThickness="2" Padding="15"
               Background="#fff"/>
 

@@ -10,6 +10,7 @@
                 </ResourceDictionary>
                 <ResourceDictionary Source="Styles/Controls.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Styles/Helpers.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Styles/Colors.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
