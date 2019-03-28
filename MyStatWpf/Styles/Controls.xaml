@@ -433,4 +433,13 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="BorderStyle" TargetType="Border">
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="10" Color="Black" Opacity="0.1" ShadowDepth="1" Direction="-75"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="White"/>
+    </Style>
 </ResourceDictionary>

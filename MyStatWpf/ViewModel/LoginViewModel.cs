@@ -12,6 +12,7 @@ namespace MyStatWpf
 {
     public class LoginViewModel:PropertyChangedBase
     {
+        private IWindowManager _windowManager;
         private Api _api;
         private string _statusString;
         private Visibility _loginTextVisibility;
@@ -45,29 +46,31 @@ namespace MyStatWpf
             }
         }
 
-        public LoginViewModel()
+        public LoginViewModel(IWindowManager wndManager)
         {
             LogInTextVisibility = Visibility.Visible;
             AnimVisibility = Visibility.Hidden;
+            _windowManager = wndManager;
         }
 
-        public async void Login(string username, object password, int city)
+        public async void Login(string username, object password, int city, Window wnd)
         {
+            username = "Kove_z5xl";
+            (password as PasswordBox).Password = "K4us3U20";
             try
             {
                 SwitchVisibility();
                 _api = new Api(username, (password as PasswordBox).Password, (Cities)Enum.ToObject(typeof(Cities), city));
-                await _api.TryLoginAsync();
-                if (_api.CurrentUser != null)
-                {
-                    SwitchVisibility();
-                    StatusString = $"Logged in. Hello, {_api.CurrentUser.FullName}";
-                }
-                else
+                _api.TryLogin();
+                if(_api.CurrentUser == null)
                 {
                     SwitchVisibility();
                     StatusString = "Failed";
+                    return;
                 }
+
+                _windowManager.ShowWindow(new MainViewModel());
+                wnd.Close();
             }
             catch (Exception e)
             {

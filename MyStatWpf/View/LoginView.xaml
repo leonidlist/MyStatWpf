@@ -70,6 +70,7 @@
                                     <cal:Parameter Value="{Binding ElementName=username, Path=Text}"></cal:Parameter>
                                     <cal:Parameter Value="{Binding ElementName=password}"></cal:Parameter>
                                     <cal:Parameter Value="{Binding ElementName=city, Path=SelectedIndex}"></cal:Parameter>
+                                    <cal:Parameter Value="{Binding ElementName=LoginWindow}"></cal:Parameter>
                                 </cal:ActionMessage>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
