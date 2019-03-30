@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStatWpf.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,20 @@ namespace MyStatWpf
         public MainView()
         {
             InitializeComponent();
+            Card c1 = new Card();
+            c1.Content = 1;
+            Card c2 = new Card();
+            c1.Content = 2;
+            //Card c3 = new Card();
+            //c1.Content = 3;
+            List<UIElement> modules = new List<UIElement>
+            {
+                c1, c2
+            };
+            foreach(var i in modules)
+            {
+                pnl.Children.Add(i);
+            }
         }
     }
 }

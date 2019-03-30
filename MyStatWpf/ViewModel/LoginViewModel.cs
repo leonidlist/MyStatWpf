@@ -55,13 +55,11 @@ namespace MyStatWpf
 
         public async void Login(string username, object password, int city, Window wnd)
         {
-            username = "Kove_z5xl";
-            (password as PasswordBox).Password = "K4us3U20";
             try
             {
                 SwitchVisibility();
                 _api = new Api(username, (password as PasswordBox).Password, (Cities)Enum.ToObject(typeof(Cities), city));
-                _api.TryLogin();
+                await _api.TryLoginAsync();
                 if(_api.CurrentUser == null)
                 {
                     SwitchVisibility();
@@ -69,7 +67,7 @@ namespace MyStatWpf
                     return;
                 }
 
-                _windowManager.ShowWindow(new MainViewModel());
+                _windowManager.ShowWindow(new MainViewModel(_api));
                 wnd.Close();
             }
             catch (Exception e)
